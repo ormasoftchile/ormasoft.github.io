@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>psl-apiclient: README</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_pasamonte_black_firma.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">psl-apiclient
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">README </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>#psl-apiclient Biblioteca .NET que permite acceder a los servicios de la API <a class="el" href="namespace_pasamonte.html">Pasamonte</a> Labs. Encapsula invocaciones REST a través de una biblioteca de clases, facilitando realizar la integración con los servicios. El servicio REST también es accesible a través de HTTP. En la parte inferior de esta descripción se presentan ejemplos de invocaciones utilizando el utilitario de comandos <em>curl</em>.</p>
+<h2>Los servicios disponibles se enmarcan en dos categorías:</h2>
+<h3>Integración con Registro Clínico Electrónico (RCE). (Actualmente se implementa la interoperabilidad con la plataforma SAYDEX).</h3>
+<ul>
+<li>Validación de usuarios (pacientes) en plataforma RCE.</li>
+<li>Obtención de recetas con despachos pendientes desde RCE.</li>
+<li>Registro (notificación) de despachos realizados a RCE.</li>
+</ul>
+<h3>Integración con operaciones de</h3>
+<ul>
+<li>Citas médicas</li>
+<li>Administración de turnos (Servicios, Módulos, Turnos)</li>
+</ul>
+<h3>Funcionalidades del servicio</h3>
+<ul>
+<li>RceAutenticar</li>
+<li>RceCambiarClave</li>
+<li>RceObtenerEntregas</li>
+<li>RceNotificarEntrega</li>
+<li>RceRegistrarCita</li>
+<li>RceConfirmarCita</li>
+<li>RceCancelarCita</li>
+<li>RceObtenerCitas</li>
+<li>RegistrarServicio</li>
+<li>EliminarServicio</li>
+<li>ObtenerServicios</li>
+<li>RegistrarModulo</li>
+<li>EliminarModulo</li>
+<li>ObtenerModulos</li>
+<li>RegistrarTurno</li>
+<li>EliminarTurno</li>
+<li>ObtenerTurnos</li>
+<li>ObtenerTerminales</li>
+</ul>
+<h3>Vea la documentación de los objetos en <a href="http://pasamonte.github.io/docs/psl-apiclient">Docs psl-apiclient</a></h3>
+<h2>Uso de los métodos desde línea de comandos</h2>
+<p>Se puede acceder a los métodos utilizando <em>curl</em> desde la línea de comandos, siguiendo los parámetros indicados en la documentación de cada método. En cada llamada se debe proveer el parámetro <b>apiKey</b> y debe invocarse utilizando el verbo <b>POST</b>.</p>
+<p><b>Ejemplo:</b></p><ul>
+<li>Para obtener una lista de los terminales registrados en el sistema, un comando posible es: ``` curl -H "Content-Type: application/json" -i \ -X POST <a href="http://ppi.cloudapp.net/api/adm/obtenerterminales">http://ppi.cloudapp.net/api/adm/obtenerterminales</a> \ -d "{ 'apiKey': 'a34287f8-102a-4cf3-bace-153c30c3eb58', \
+           'idTerminal': 'a34287f8-102a-4cf3-bace-153c30c3eb58' }" ```</li>
+<li>Para obtener los datos de un terminal específico, se agrega el id del terminal como parámetro: ``` curl -H "Content-Type: application/json" -i \ -X POST <a href="http://ppi.cloudapp.net/api/adm/obtenerterminales">http://ppi.cloudapp.net/api/adm/obtenerterminales</a> \ -d "{ 'apiKey': 'a34287f8-102a-4cf3-bace-153c30c3eb58', \ 'idTerminal': 'a34287f8-102a-4cf3-bace-153c30c3eb58', \ 'id': '7a873d2f-181d-4c23-90c4-176897f47382' }" ```</li>
+<li>Para crear un servicio, debemos proveer los siguientes parámetros: ``` +--------------------------------------------------------------------------------------------------&mdash;+ | parámetro | opcional | valor por defecto | ejemplo | +--------------------------------------------------------------------------------------------------&mdash;+ | id | sí | &lt;nulo&gt; | 75e48afb-25dd-447a-a864-15992ec070b4 | +--------------------------------------------------------------------------------------------------&mdash;+ | titulo | no | | servicio de prueba | +--------------------------------------------------------------------------------------------------&mdash;+ | activo | no | | true | +--------------------------------------------------------------------------------------------------&mdash;+ | bloqueado | no | | false | +--------------------------------------------------------------------------------------------------&mdash;+ | idNodo | no | | f36a323c-3c20-42eb-811c-4e84668adade | +--------------------------------------------------------------------------------------------------&mdash;+ | configuracionJson | sí | &lt;nulo&gt; | | +--------------------------------------------------------------------------------------------------&mdash;+ | tipoDeToken | no | | numerico | +--------------------------------------------------------------------------------------------------&mdash;+ | tokenMaximoCorrelativo | no | | 100 | +--------------------------------------------------------------------------------------------------&mdash;+ | ultimoTokenGenerado | sí | &lt;nulo&gt; | 1 | +--------------------------------------------------------------------------------------------------&mdash;+ | prioridadVisual | no | | alta | +--------------------------------------------------------------------------------------------------&mdash;+ ``` el comando resultante sería: ``` curl -H "Content-Type: application/json" -i \ -X POST <a href="http://ppi.cloudapp.net/api/adm/registrarservicio">http://ppi.cloudapp.net/api/adm/registrarservicio</a> \ -d "{ 'apiKey': 'a34287f8-102a-4cf3-bace-153c30c3eb58', \ 'id': '75e48afb-25dd-447a-a864-15992ec070b4', \ 'titulo': 'servicio de prueba', \ 'activo': 'true', \ 'bloqueado': 'false', \ 'idNodo': 'f36a323c-3c20-42eb-811c-4e84668adade', \ 'configuracionJson': '', \ 'tipoDeToken': 'numerico', \ 'tokenMaximoCorrelativo': '100', \ 'ultimoTokenGenerado': 1, \ 'prioridadVisual': 'alta' }" ```</li>
+<li>Para revisar los datos del servicio que registramos, podemos ejecutar: ``` curl -H "Content-Type: application/json" -i \ -X POST <a href="http://ppi.cloudapp.net/api/adm/obtenerservicios">http://ppi.cloudapp.net/api/adm/obtenerservicios</a> \ -d "{ 'apiKey': 'a34287f8-102a-4cf3-bace-153c30c3eb58', \
+           'id': '75e48afb-25dd-447a-a864-15992ec070b4' }" ``` </li>
+</ul>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 14 de Abril de 2015 17:26:51 para psl-apiclient por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>
